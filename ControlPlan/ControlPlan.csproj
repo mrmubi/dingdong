@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- UseWPF only to pull in UIAutomationClient/UIAutomationTypes for TeamsBadgeReader. -->
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace>ControlPlan</RootNamespace>
+    <AssemblyName>ControlPlan</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Diagnostic console probes under Tools/ are standalone projects. -->
+    <Compile Remove="Tools\**\*.cs" />
+    <None Remove="Tools\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tesseract" Version="5.2.0" />
+  </ItemGroup>
+
+</Project>

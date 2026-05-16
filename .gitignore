@@ -1,0 +1,30 @@
+# =============================================================
+#  DingDong .gitignore
+# =============================================================
+
+# --- Secrets (never commit) ----------------------------------
+Firmware/secrets.h
+
+# --- Build outputs -------------------------------------------
+build/
+build-fw/
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# --- Tool artifacts (probe scripts, dumps, ad-hoc screenshots) -----
+# The Tools/ directory itself is gitignored so any future one-off
+# diagnostic scripts and their captures stay out of the repo.
+Tools/
+
+# --- IDE / OS noise ------------------------------------------
+.vs/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Scratch -------------------------------------------------
+dp.txt
