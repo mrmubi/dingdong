@@ -12,12 +12,18 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <RootNamespace>ControlPlan</RootNamespace>
     <AssemblyName>ControlPlan</AssemblyName>
+    <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Diagnostic console probes under Tools/ are standalone projects. -->
     <Compile Remove="Tools\**\*.cs" />
     <None Remove="Tools\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Embed the icon so MainForm/NotifyIcon can load it at runtime. -->
+    <EmbeddedResource Include="app.ico" />
   </ItemGroup>
 
   <ItemGroup>

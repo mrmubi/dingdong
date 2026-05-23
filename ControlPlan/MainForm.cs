@@ -69,6 +69,14 @@ public partial class MainForm : Form
     {
         SuspendLayout();
         Text = "DingDong Control Plan";
+        // Window/taskbar icon. Embedded via <EmbeddedResource> in the csproj.
+        try
+        {
+            using var s = typeof(MainForm).Assembly
+                .GetManifestResourceStream("ControlPlan.app.ico");
+            if (s != null) Icon = new Icon(s);
+        }
+        catch { /* icon is cosmetic; ignore load failures */ }
         // Default size large enough to fit all 21 gadgets + Mentions tab + log
         // without scrolling.  Will be overwritten by saved size in ApplySettingsToUi.
         ClientSize = new Size(_settings.WindowWidth, _settings.WindowHeight);
